@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Navigation;
 // The Search Contract item template is documented at http://go.microsoft.com/fwlink/?LinkId=234240
 
 using ContosoCookbook.Data;
+using Windows.UI.ApplicationSettings; 
 
 namespace ContosoCookbook
 {
@@ -59,6 +60,7 @@ namespace ContosoCookbook
             ///    Window.Current.Content = page;
     frame = new Frame();
                 Window.Current.Content = frame;
+                SettingsPane.GetForCurrentView().CommandsRequested += (Application.Current as App).OnCommandsRequested;
                 frame.Navigate(typeof(SearchResultsPage), queryText);
 
             }

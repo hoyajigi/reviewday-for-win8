@@ -21,6 +21,9 @@ using Windows.UI.Xaml.Navigation;
 using ContosoCookbook.Data;
 using Windows.ApplicationModel.Search;
 
+using Windows.UI.ApplicationSettings;
+using ContosoCookbook.Common;
+
 
 namespace ContosoCookbook
 {
@@ -85,6 +88,7 @@ namespace ContosoCookbook
             Window.Current.Content = rootFrame;
             Window.Current.Activate();
             SearchPane.GetForCurrentView().SuggestionsRequested += OnSuggestionsRequested;
+            SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
         }
         void OnSuggestionsRequested(SearchPane sender, SearchPaneSuggestionsRequestedEventArgs args)
 {
@@ -123,6 +127,18 @@ SearchPane.GetForCurrentView().SuggestionsRequested += OnSuggestionsRequested;
 
 ContosoCookbook.SearchResultsPage.Activate(args.QueryText, args.PreviousExecutionState);
 }
+        public void OnCommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
+{
+    // Add an About command
+var about = new SettingsCommand("about", "About", (handler) =>
+        {
+var settings = new SettingsFlyout();
+settings.ShowFlyout(new AboutUserControl());
+        });
+
+args.Request.ApplicationCommands.Add(about);
+}
+
 
     }
 }

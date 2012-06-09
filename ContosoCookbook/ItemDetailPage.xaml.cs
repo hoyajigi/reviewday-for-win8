@@ -57,6 +57,7 @@ namespace ContosoCookbook
             var item = RecipeDataSource.GetItem((String)navigationParameter); 
             this.DefaultViewModel["Group"] = item.Group;
             this.DefaultViewModel["Items"] = item.Group.Items;
+            
             this.flipView.SelectedItem = item;
             this._item = item;
 
@@ -66,7 +67,7 @@ namespace ContosoCookbook
 
             _handler = new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(OnDataRequested);
             DataTransferManager.GetForCurrentView().DataRequested += _handler;
-
+            
         }
         void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
 {
@@ -112,6 +113,5 @@ request.Data.SetBitmap(reference);
         {
             this._item = (sender as FlipView).SelectedItem as RecipeDataItem;
         }
-
     }
 }

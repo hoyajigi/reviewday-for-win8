@@ -347,7 +347,7 @@ namespace ContosoCookbook.Data
                 {
                     var client = new HttpClient();
                     client.MaxResponseContentBufferSize = 1024 * 1024; // Read up to 1 MB of data
-                    var response = await client.GetAsync(new Uri("http://me2day.net/api/get_posts_by_content.json?domain="+Recipe.Group.Title+"&identifier="+Recipe.UniqueId+"&from_me2live=true&page=1&count=10&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
+                    var response = await client.GetAsync(new Uri("http://me2day.net/api/get_posts_by_content.json?domain="+Recipe.Group.Title+"&identifier="+Recipe.UniqueId+"&from_me2live=true&page=1&count=5&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
                     var result = await response.Content.ReadAsStringAsync();
 
                     // Parse the JSON Recipe data
