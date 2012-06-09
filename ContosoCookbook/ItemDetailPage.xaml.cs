@@ -57,8 +57,10 @@ namespace ContosoCookbook
             var item = RecipeDataSource.GetItem((String)navigationParameter); 
             this.DefaultViewModel["Group"] = item.Group;
             this.DefaultViewModel["Items"] = item.Group.Items;
-            
-            this.flipView.SelectedItem = item;
+            if(flipView1.Visibility==Visibility.Visible)
+                this.flipView1.SelectedItem = item;
+            else
+                this.flipView2.SelectedItem = item;
             this._item = item;
 
             // Register handler for DataRequested events for sharing
@@ -67,7 +69,16 @@ namespace ContosoCookbook
 
             _handler = new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(OnDataRequested);
             DataTransferManager.GetForCurrentView().DataRequested += _handler;
-            
+            if (item.Directions == "")
+            {
+                flipView1.Visibility = Visibility.Collapsed;
+                flipView2.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                flipView1.Visibility = Visibility.Visible;
+                flipView2.Visibility = Visibility.Collapsed;
+            }
         }
         void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
 {
@@ -107,7 +118,14 @@ request.Data.SetBitmap(reference);
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            var selectedItem = (RecipeDataItem)this.flipView.SelectedItem; pageState["SelectedItem"] = selectedItem.UniqueId;
+            if (flipView1.Visibility == Visibility.Visible)
+            {
+                var selectedItem = (RecipeDataItem)this.flipView1.SelectedItem; pageState["SelectedItem"] = selectedItem.UniqueId;
+            }
+            else
+            {
+                var selectedItem = (RecipeDataItem)this.flipView2.SelectedItem; pageState["SelectedItem"] = selectedItem.UniqueId;
+            }
         }
         private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
