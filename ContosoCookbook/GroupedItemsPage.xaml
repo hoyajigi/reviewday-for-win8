@@ -88,9 +88,9 @@
                     <GridView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
-                                <Image Source="{Binding Group.Image}" Width="320" Height="240"  Stretch="UniformToFill" />
+                               <!-- <Image Source="{Binding Group.Image}" Width="320" Height="240"  Stretch="UniformToFill" />-->
                                 <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                                    <TextBlock Text="{Binding Group.Title}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Height="30" Margin="15,0,15,0"/>
+                                    <TextBlock Text="{Binding Group.Title}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Width="320" Height="240" Margin="15,0,15,0"/>
                                 </StackPanel>
                             </Grid>
                         </DataTemplate>
