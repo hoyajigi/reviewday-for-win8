@@ -1,4 +1,5 @@
-﻿using System;
+﻿//http://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh872190.aspx
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
