@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ContosoCookbook.exe">
       <PackagePath>ContosoCookbook.exe</PackagePath>
-      <Modified>2012-07-04T17:19:01.333</Modified>
+      <Modified>2012-07-04T17:34:31.914</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ContosoCookbook.pdb">
       <PackagePath>ContosoCookbook.pdb</PackagePath>
-      <Modified>2012-07-04T17:19:01.298</Modified>
+      <Modified>2012-07-04T17:34:31.877</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>

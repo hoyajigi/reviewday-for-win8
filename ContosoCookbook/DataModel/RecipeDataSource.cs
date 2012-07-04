@@ -362,6 +362,9 @@ namespace ContosoCookbook.Data
                     group.Items.Add(Recipe);
                 }
             }
+            _recipeDataSource.AllGroups.FirstOrDefault(c=>c.Title.Equals("movie")).Title="영화";
+            _recipeDataSource.AllGroups.FirstOrDefault(c=>c.Title.Equals("music_album")).Title="음반";
+            _recipeDataSource.AllGroups.FirstOrDefault(c=>c.Title.Equals("book")).Title="책";
         }
         
         private static RecipeDataGroup CreateRecipeGroup(string obj)
