@@ -44,9 +44,8 @@
         </Grid>
 
         <!-- Horizontaling grid used in most view states -->
-        <SemanticZoom Grid.Row="1">
-            <SemanticZoom.ZoomedInView>
-                <GridView
+
+              <GridView
             x:Name="itemGridView"
             AutomationProperties.AutomationId="ItemGridView"
             AutomationProperties.Name="Grouped Items"
@@ -54,6 +53,7 @@
             ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
             SelectionMode="None"
             IsItemClickEnabled="True"
+                        Grid.Row="1"
             ItemClick="ItemView_ItemClick">
 
                     <GridView.ItemsPanel>
@@ -82,24 +82,6 @@
                         </GroupStyle>
                     </GridView.GroupStyle>
                 </GridView>
-            </SemanticZoom.ZoomedInView>
-            <SemanticZoom.ZoomedOutView>
-                <GridView x:Name="groupGridView" Margin="116,0,40,46">
-                    <GridView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                               <!-- <Image Source="{Binding Group.Image}" Width="320" Height="240"  Stretch="UniformToFill" />-->
-                                <StackPanel VerticalAlignment="Bottom" Background="{StaticResource ListViewItemOverlayBackgroundThemeBrush}">
-                                    <TextBlock Text="{Binding Group.Title}" Foreground="{StaticResource ListViewItemOverlayForegroundThemeBrush}" Style="{StaticResource TitleTextStyle}" Width="320" Height="240" Margin="15,0,15,0"/>
-                                </StackPanel>
-                            </Grid>
-                        </DataTemplate>
-                    </GridView.ItemTemplate>
-                </GridView>
-            </SemanticZoom.ZoomedOutView>
-        </SemanticZoom>
-
-
         <!-- Vertical scrolling list only used when snapped -->
         <ListView
             x:Name="itemListView"
@@ -149,9 +131,7 @@
                         <ObjectAnimationUsingKeyFrames Storyboard.TargetName="itemGridView" Storyboard.TargetProperty="Visibility">
                             <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
                         </ObjectAnimationUsingKeyFrames>
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="groupGridView" Storyboard.TargetProperty="Visibility">
-                            <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed"/>
-                        </ObjectAnimationUsingKeyFrames>
+             
 
                     </Storyboard>
                 </VisualState>

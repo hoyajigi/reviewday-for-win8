@@ -1051,7 +1051,7 @@
                     <Grid x:Name="RootGrid" Width="30" Height="30">
                         <Grid Margin="-6,-6,0,0">
                             <TextBlock x:Name="BackgroundGlyph" Text="&#xE0D4;" Foreground="{StaticResource BackButtonBackgroundThemeBrush}"/>
-                            <TextBlock x:Name="NormalGlyph" Text="{StaticResource BackButtonSnappedGlyph}" Foreground="{StaticResource BackButtonForegroundThemeBrush}" FontSize="40" Margin="0,-10,0,0"/>
+                            <TextBlock x:Name="NormalGlyph" Text="{StaticResource BackButtonSnappedGlyph}" Foreground="{StaticResource BackButtonForegroundThemeBrush}"/>
                             <TextBlock x:Name="ArrowGlyph" Text="&#xE0C4;" Foreground="{StaticResource BackButtonPressedForegroundThemeBrush}" Opacity="0"/>
                         </Grid>
                         <Rectangle

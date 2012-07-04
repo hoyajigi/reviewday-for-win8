@@ -42,7 +42,7 @@ namespace ContosoCookbook
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             var recipeDataGroups = RecipeDataSource.GetGroups((String)navigationParameter);
             this.DefaultViewModel["Groups"] = recipeDataGroups;
-            this.groupGridView.ItemsSource = this.groupedItemsViewSource.View.CollectionGroups;
+           // this.groupGridView.ItemsSource = this.groupedItemsViewSource.View.CollectionGroups;
 
         }
 

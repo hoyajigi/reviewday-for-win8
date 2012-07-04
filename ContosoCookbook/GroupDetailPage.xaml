@@ -88,9 +88,7 @@
 
             <ListView.Header>
                 <StackPanel>
-                    <TextBlock Text="{Binding Subtitle}" Margin="20,0,18,20" Style="{StaticResource TitleTextStyle}" MaxHeight="60"/>
-                    <Image Source="{Binding Image}" Margin="20,0,18,0" MaxHeight="160" Stretch="UniformToFill"/>
-                    <TextBlock Margin="20,20,18,30" Text="{Binding Description}" Style="{StaticResource BodyTextStyle}"/>
+                    <TextBlock Text="{Binding Title}" Margin="20,0,18,20" Style="{StaticResource TitleTextStyle}" MaxHeight="60"/>
                 </StackPanel>
             </ListView.Header>
         </ListView>
@@ -103,7 +101,6 @@
     Style="{StaticResource VerticalScrollViewerStyle}">
 
             <StackPanel Margin="90,0,90,0">
-                <Image Source="{Binding Image}" Width="480" HorizontalAlignment="Left" Margin="20,-20,0,20" Stretch="UniformToFill"/>
                 <ListView
             AutomationProperties.AutomationId="ItemListView"
             AutomationProperties.Name="Items In Group"
