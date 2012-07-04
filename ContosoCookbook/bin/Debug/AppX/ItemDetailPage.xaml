@@ -28,7 +28,7 @@
     -->
     <Grid
         Style="{StaticResource LayoutRootStyle}"
-        DataContext="{Binding Group}"
+        DataContext="{Binding Source={StaticResource itemsViewSource}}"
         d:DataContext="{Binding AllGroups[0], Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}">
 
         <Grid.RowDefinitions>
@@ -71,28 +71,31 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="400" />
                                     <ColumnDefinition Width="40" />
-                                    <ColumnDefinition Width="1000" />
-                                    <ColumnDefinition Width="40" />
-                                    <ColumnDefinition Width="500" />
+                                    <ColumnDefinition Width="800" />
                                 </Grid.ColumnDefinitions>
 
+                              <ScrollViewer
+    x:Name="portraitScrollViewer"
+    Style="{StaticResource VerticalScrollViewerStyle}">
                                 <StackPanel Orientation="Vertical" Grid.Column="0">
-                                    <TextBlock FontSize="26.667" FontWeight="Light" Text="{Binding Title}" TextWrapping="Wrap"/>
-                                    <Image x:Name="image" Width="400" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}"/>
-<!--   <StackPanel Orientation="Horizontal">
+                                  <!-- <TextBlock FontSize="26.667" FontWeight="Light" Text="{Binding Title}" TextWrapping="Wrap"/>-->
+                                  <Image x:Name="image" Width="400" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}"/>
+                                  <TextBlock FontSize="20" FontWeight="Light" Text="{Binding Directions}" TextWrapping="Wrap" />
+                                  <!--   <StackPanel Orientation="Horizontal">
                                          <TextBlock FontSize="26.667" FontWeight="Light" Text="Preparation time:"/>
                                        <TextBlock FontSize="26.667" FontWeight="Light" Text="{Binding PrepTime}" Margin="8,0,8,0"/>
                                         <TextBlock FontSize="26.667" FontWeight="Light" Text="minutes"/>
                                     </StackPanel>-->
                                 </StackPanel>
-                                <StackPanel Orientation="Vertical" Grid.Column="2">
+                              </ScrollViewer>
+                              <StackPanel Orientation="Vertical" Grid.Column="2">
                                     <TextBlock FontSize="26.667" FontWeight="Light" Text="Review" Margin="0,0,0,16"/>
                                     <TextBlock FontSize="20" FontWeight="Light" LineHeight="32.5" Text="{Binding Ingredients, Converter={StaticResource ListConverter}}" TextWrapping="Wrap" />
                                 </StackPanel>
-                                <StackPanel Orientation="Vertical" Grid.Column="4">
+                             <!--   <StackPanel Orientation="Vertical" Grid.Column="4">
                                     <TextBlock FontSize="26.667" FontWeight="Light" Text="Description" Margin="0,0,0,16" x:Name="dTB"/>
-                                    <TextBlock FontSize="20" FontWeight="Light" Text="{Binding Directions}" TextWrapping="Wrap" />
-                                </StackPanel>
+                                  
+                                </StackPanel>-->
                             </Grid>
                         </ScrollViewer>
                     </UserControl>
@@ -120,12 +123,11 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="400" />
                                     <ColumnDefinition Width="40" />
-                                    <ColumnDefinition Width="1000" />
+                                    <ColumnDefinition Width="800" />
                                     
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Orientation="Vertical" Grid.Column="0">
-                                    <TextBlock FontSize="26.667" FontWeight="Light" Text="{Binding Title}" TextWrapping="Wrap"/>
                                     <Image x:Name="image" Width="400" Margin="0,20,0,10" Stretch="Uniform" Source="{Binding Image}"/>
                                     <!--   <StackPanel Orientation="Horizontal">
                                          <TextBlock FontSize="26.667" FontWeight="Light" Text="Preparation time:"/>
