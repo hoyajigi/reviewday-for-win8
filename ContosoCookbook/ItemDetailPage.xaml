@@ -71,7 +71,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="400" />
                                     <ColumnDefinition Width="40" />
-                                    <ColumnDefinition Width="800" />
+                                    <ColumnDefinition Width="700" />
                                 </Grid.ColumnDefinitions>
 
                               <ScrollViewer
@@ -88,11 +88,16 @@
                                     </StackPanel>-->
                                 </StackPanel>
                               </ScrollViewer>
-                              <StackPanel Orientation="Vertical" Grid.Column="2">
-                                    <TextBlock FontSize="26.667" FontWeight="Light" Text="Review" Margin="0,0,0,16"/>
-                                    <TextBlock FontSize="20" FontWeight="Light" LineHeight="32.5" Text="{Binding Ingredients, Converter={StaticResource ListConverter}}" TextWrapping="Wrap" />
+                               <ScrollViewer
+    x:Name="p1ScrollViewer"
+    Style="{StaticResource VerticalScrollViewerStyle}"  Grid.Column="2">
+                                 <StackPanel Orientation="Vertical">
+                                   <TextBlock FontSize="26.667" FontWeight="Light" Text="Review" Margin="0,0,0,16"/>
+                                   <TextBlock FontSize="20" FontWeight="Light" LineHeight="32.5" Text="{Binding Ingredients, Converter={StaticResource ListConverter}}" TextWrapping="Wrap" />
                                 </StackPanel>
-                             <!--   <StackPanel Orientation="Vertical" Grid.Column="4">
+                               </ScrollViewer>
+
+                               <!--   <StackPanel Orientation="Vertical" Grid.Column="4">
                                     <TextBlock FontSize="26.667" FontWeight="Light" Text="Description" Margin="0,0,0,16" x:Name="dTB"/>
                                   
                                 </StackPanel>-->
@@ -123,7 +128,7 @@
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="400" />
                                     <ColumnDefinition Width="40" />
-                                    <ColumnDefinition Width="800" />
+                                    <ColumnDefinition Width="700" />
                                     
                                 </Grid.ColumnDefinitions>
 
@@ -135,10 +140,15 @@
                                         <TextBlock FontSize="26.667" FontWeight="Light" Text="minutes"/>
                                     </StackPanel>-->
                                 </StackPanel>
-                                <StackPanel Orientation="Vertical" Grid.Column="2">
-                                    <TextBlock FontSize="26.667" FontWeight="Light" Text="Review" Margin="0,0,0,16"/>
-                                    <TextBlock FontSize="20" FontWeight="Light" LineHeight="32.5" Text="{Binding Ingredients, Converter={StaticResource ListConverter}}" TextWrapping="Wrap" />
-                                </StackPanel>
+                                  <ScrollViewer
+  x:Name="p2ScrollViewer"
+  Style="{StaticResource VerticalScrollViewerStyle}"  Grid.Column="2">
+                                    <StackPanel Orientation="Vertical">
+                                      <TextBlock FontSize="26.667" FontWeight="Light" Text="Review" Margin="0,0,0,16"/>
+
+                                      <TextBlock FontSize="20" FontWeight="Light" LineHeight="32.5" Text="{Binding Ingredients, Converter={StaticResource ListConverter}}" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                  </ScrollViewer>
                                 
                             </Grid>
                         </ScrollViewer>
