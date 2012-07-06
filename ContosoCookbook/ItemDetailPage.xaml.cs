@@ -57,10 +57,10 @@ namespace ContosoCookbook
             var item = RecipeDataSource.GetItem((String)navigationParameter); 
             this.DefaultViewModel["Group"] = item.Group;
             this.DefaultViewModel["Items"] = item.Group.Items;
-            if(flipView1.Visibility==Visibility.Visible)
+//            if(flipView1.Visibility==Visibility.Visible)
                 this.flipView1.SelectedItem = item;
-            else
-                this.flipView2.SelectedItem = item;
+//            else
+//                this.flipView2.SelectedItem = item;
             this._item = item;
 
             // Register handler for DataRequested events for sharing
@@ -69,16 +69,16 @@ namespace ContosoCookbook
 
             _handler = new TypedEventHandler<DataTransferManager, DataRequestedEventArgs>(OnDataRequested);
             DataTransferManager.GetForCurrentView().DataRequested += _handler;
-            if (item.Directions == "")
+           /* if (item.Directions == "")
             {
                 flipView1.Visibility = Visibility.Collapsed;
                 flipView2.Visibility = Visibility.Visible;
             }
             else
-            {
+            {*/
                 flipView1.Visibility = Visibility.Visible;
                 flipView2.Visibility = Visibility.Collapsed;
-            }
+           // }
         }
         void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
 {
