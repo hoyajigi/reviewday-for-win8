@@ -19,7 +19,6 @@ using Windows.ApplicationModel.DataTransfer;
 using System.Text;
 using Windows.Storage.Streams;
 
-
 namespace ContosoCookbook
 {
     /// <summary>
@@ -34,6 +33,22 @@ namespace ContosoCookbook
         public ItemDetailPage()
         {
             this.InitializeComponent();
+            flipView1.SizeChanged += flipView1_SizeChanged;
+            this.SizeChanged += ItemDetailPage_SizeChanged;
+        }
+
+        void ItemDetailPage_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            var template = this.Resources["FlipViewItemTemplate"] as DataTemplate;
+            var dataTemplate = template.LoadContent();
+//            (((dataTemplate as UserControl).Content as ScrollViewer).Content as Grid).ColumnDefinitions[2]
+        }
+
+        void flipView1_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+         //   grid1.
+         //   e.NewSize.Width;
+            //throw new NotImplementedException();
         }
 
         /// <summary>
@@ -77,7 +92,7 @@ namespace ContosoCookbook
             else
             {*/
                 flipView1.Visibility = Visibility.Visible;
-                flipView2.Visibility = Visibility.Collapsed;
+          //      flipView2.Visibility = Visibility.Collapsed;
            // }
         }
         void OnDataRequested(DataTransferManager sender, DataRequestedEventArgs args)
@@ -118,14 +133,14 @@ request.Data.SetBitmap(reference);
         /// <param name="pageState">An empty dictionary to be populated with serializable state.</param>
         protected override void SaveState(Dictionary<String, Object> pageState)
         {
-            if (flipView1.Visibility == Visibility.Visible)
-            {
+         //   if (flipView1.Visibility == Visibility.Visible)
+          //  {
                 var selectedItem = (RecipeDataItem)this.flipView1.SelectedItem; pageState["SelectedItem"] = selectedItem.UniqueId;
-            }
-            else
-            {
-                var selectedItem = (RecipeDataItem)this.flipView2.SelectedItem; pageState["SelectedItem"] = selectedItem.UniqueId;
-            }
+          //  }
+          //  else
+          //  {
+        //        var selectedItem = (RecipeDataItem)this.flipView2.SelectedItem; pageState["SelectedItem"] = selectedItem.UniqueId;
+           // }
         }
         private void FlipView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
