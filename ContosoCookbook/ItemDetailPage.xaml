@@ -22,7 +22,7 @@
 
     <DataTemplate x:Key="FlipViewItemTemplate">
       <UserControl Loaded="StartLayoutUpdates" Unloaded="StopLayoutUpdates">
-        <ScrollViewer x:Name="scrollViewer" Style="{StaticResource HorizontalScrollViewerStyle}" Grid.Row="1">
+    <!--    <ScrollViewer x:Name="scrollViewer" Style="{StaticResource HorizontalScrollViewerStyle}" Grid.Row="1">-->
 
           <!-- Three-column grid for item-detail layout -->
           <Grid x:Name="grid1" Margin="120,0,0,0">
@@ -60,7 +60,7 @@
                                   
                                 </StackPanel>-->
           </Grid>
-        </ScrollViewer>
+<!--        </ScrollViewer>-->
       </UserControl>
     </DataTemplate>
 
@@ -97,12 +97,12 @@
             one item at a time, allowing the user to flip through all items in the chosen
             group
         -->
+    <Grid Grid.Row="1">
     <FlipView
         x:Name="flipView1"
         AutomationProperties.AutomationId="ItemsFlipView"
         AutomationProperties.Name="Item Details"
         TabIndex="1"
-        Grid.Row="1"
         Margin="0,-3,0,0"
         SelectionChanged="FlipView_SelectionChanged"
         ItemTemplate="{StaticResource FlipViewItemTemplate}"
@@ -110,7 +110,7 @@
       
     
     </FlipView>
-   
+   </Grid>
     <VisualStateManager.VisualStateGroups>
       <!-- Visual states reflect the application's view state -->
       <VisualStateGroup x:Name="ApplicationViewStates">
