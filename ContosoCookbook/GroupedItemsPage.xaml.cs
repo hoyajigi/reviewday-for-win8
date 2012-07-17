@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.UI.Popups;
 
 // The Grouped Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234231
 
@@ -39,11 +40,20 @@ namespace ContosoCookbook
         /// session.  This will be null the first time a page is visited.</param>
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
+            
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
             var recipeDataGroups = RecipeDataSource.GetGroups((String)navigationParameter);
-            this.DefaultViewModel["Groups"] = recipeDataGroups;
-           // this.groupGridView.ItemsSource = this.groupedItemsViewSource.View.CollectionGroups;
-
+            if (recipeDataGroups.Count() == 0)
+            {
+                MessageDialog md = new MessageDialog("인터넷 연결을 확인해 주세요", "인터넷 연결 없음");
+                md.ShowAsync();
+            }
+            else
+            {
+                // _recipeDataSource = new RecipeDataSource();
+                this.DefaultViewModel["Groups"] = recipeDataGroups;
+                // this.groupGridView.ItemsSource = this.groupedItemsViewSource.View.CollectionGroups;
+            }
         }
 
         /// <summary>

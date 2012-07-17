@@ -5,7 +5,7 @@
     <WindowsUser>hoyajigi</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>7AD5C7FBE806A5713A6FA5725502CA1DA0F8352220C7DE9A4818DA862FEDED30</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>D9887C9A23879B04F8759A8D27C13421BDAF4A9162E33890F30CFF91786E9DF1</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>a7bcafdd-68a7-4831-a6be-1a22a4107f78_1.0.0.0_neutral__tp205pmt3ha58</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>a7bcafdd-68a7-4831-a6be-1a22a4107f78_tp205pmt3ha58!App</RegisteredUserModeAppID>
     <RegisteredPackageID>a7bcafdd-68a7-4831-a6be-1a22a4107f78</RegisteredPackageID>
@@ -16,17 +16,17 @@
     <AppXManifest Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-07-16T10:40:13.061</Modified>
+      <Modified>2012-07-18T08:19:45.085</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ContosoCookbook.exe">
       <PackagePath>ContosoCookbook.exe</PackagePath>
-      <Modified>2012-07-16T10:40:12.800</Modified>
+      <Modified>2012-07-18T08:47:51.418</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ContosoCookbook.pdb">
       <PackagePath>ContosoCookbook.pdb</PackagePath>
-      <Modified>2012-07-16T10:40:12.733</Modified>
+      <Modified>2012-07-18T08:47:51.366</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -41,7 +41,7 @@
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\Assets\SplashScreen.png">
       <PackagePath>Assets\SplashScreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-07-02T13:40:56.088</Modified>
+      <Modified>2012-07-17T12:16:16.530</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
@@ -70,19 +70,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2012-07-04T15:40:11.537</Modified>
+      <Modified>2012-07-17T11:31:39.116</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
-      <Modified>2012-07-04T17:04:42.996</Modified>
+      <Modified>2012-07-17T11:08:37.712</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\GroupDetailPage.xaml">
       <PackagePath>GroupDetailPage.xaml</PackagePath>
-      <Modified>2012-07-04T17:18:58.993</Modified>
+      <Modified>2012-07-17T11:36:52.634</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ItemDetailPage.xaml">
       <PackagePath>ItemDetailPage.xaml</PackagePath>
-      <Modified>2012-07-16T10:39:06.870</Modified>
+      <Modified>2012-07-17T13:51:53.144</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\App.xaml">
       <PackagePath>App.xaml</PackagePath>
@@ -90,7 +90,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-07-04T15:31:42.887</Modified>
+      <Modified>2012-07-17T12:05:10.243</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

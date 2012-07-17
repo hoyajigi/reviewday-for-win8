@@ -22,13 +22,10 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="ContosoCookbook.exe" EntryPoint="ContosoCookbook.App">
-      <VisualElements DisplayName="ReviewDay" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="ReviewDay" ForegroundText="light" BackgroundColor="#464646">
+      <VisualElements DisplayName="ReviewDay" Logo="Assets\Logo.png" SmallLogo="Assets\SmallLogo.png" Description="ReviewDay" ForegroundText="light" BackgroundColor="#000000">
         <DefaultTile ShowName="allLogos" />
         <SplashScreen Image="Assets\SplashScreen.png" />
       </VisualElements>
-      <Extensions>
-        <Extension Category="windows.search" />
-      </Extensions>
     </Application>
   </Applications>
   <Capabilities>

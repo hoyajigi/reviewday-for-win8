@@ -14,6 +14,8 @@ using System.Net.Http;
 using Windows.Data.Json;
 using Windows.ApplicationModel;
 using Windows.Storage.Streams;
+using Windows.Networking.Connectivity;
+using Windows.UI.Popups;
 
 // The data model defined by this file serves as a representative example of a strongly-typed
 // model that supports notification when members are added, removed, or modified.  The property
@@ -21,6 +23,8 @@ using Windows.Storage.Streams;
 //
 // Applications may use this model as a starting point and build on it, or discard it entirely and
 // replace it with something appropriate to their needs.
+
+
 
 namespace ContosoCookbook.Data
 {
@@ -189,7 +193,6 @@ namespace ContosoCookbook.Data
     /// </summary>
     public sealed class RecipeDataSource
     {
-
         private static RecipeDataSource _recipeDataSource = new RecipeDataSource();
 
         private ObservableCollection<RecipeDataGroup> _allGroups = new ObservableCollection<RecipeDataGroup>();
@@ -226,18 +229,33 @@ namespace ContosoCookbook.Data
 
             if (_recipeDataSource != null && _recipeDataSource.AllGroups.Count > 0) return;
 
-            // Retrieve Recipe data from Azure
-            var client = new HttpClient();
-            client.MaxResponseContentBufferSize = 1024 * 1024; // Read up to 1 MB of data
-            var response = await client.GetAsync(new Uri("http://me2day.net/api/get_best_contents.json?&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
-            var result = await response.Content.ReadAsStringAsync();
+            var profile = NetworkInformation.GetInternetConnectionProfile();
 
-            // Parse the JSON Recipe data
-            var Recipes = JsonArray.Parse(result.Substring(12, result.Length - 13));
+            if (profile==null||profile.GetNetworkConnectivityLevel() != NetworkConnectivityLevel.InternetAccess)
+            {
+                
+            }
+            else
+            {
+                // Retrieve Recipe data from Azure
+                try
+                {
+                    var client = new HttpClient();
+                    client.MaxResponseContentBufferSize = 1024 * 1024; // Read up to 1 MB of data
+                    var response = await client.GetAsync(new Uri("http://me2day.net/api/get_best_contents.json?&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
+                    var result = await response.Content.ReadAsStringAsync();
 
-            // Convert the JSON objects into RecipeDataItems and RecipeDataGroups
-            await CreateRecipesAndRecipeGroups(Recipes);
+                    // Parse the JSON Recipe data
+                    var Recipes = JsonArray.Parse(result.Substring(12, result.Length - 13));
 
+                    // Convert the JSON objects into RecipeDataItems and RecipeDataGroups
+                    await CreateRecipesAndRecipeGroups(Recipes);
+                }
+                catch (Exception ex)
+                {
+                    _recipeDataSource = null;
+                }
+            }
         }
 
         public static async System.Threading.Tasks.Task LoadLocalDataAsync()
@@ -261,110 +279,110 @@ namespace ContosoCookbook.Data
 
         private static async System.Threading.Tasks.Task CreateRecipesAndRecipeGroups(JsonArray array)
         {
-            foreach (var item in array)
+            try
             {
-                var obj = item.GetObject();
-                RecipeDataItem Recipe = new RecipeDataItem();
-                RecipeDataGroup group = null;
-
-                foreach (var key in obj.Keys)
+                foreach (var item in array)
                 {
-                    IJsonValue val;
-                    if (!obj.TryGetValue(key, out val))
-                        continue;
+                    var obj = item.GetObject();
+                    RecipeDataItem Recipe = new RecipeDataItem();
+                    RecipeDataGroup group = null;
 
-                    switch (key)
+                    foreach (var key in obj.Keys)
                     {
-                        case "identifier":
-                            Recipe.UniqueId = val.GetString();
-                            var client = new HttpClient();
-                            client.MaxResponseContentBufferSize = 1024 * 1024; // Read up to 1 MB of data
-                            var response = await client.GetAsync(new Uri("http://me2day.net/api/get_content.json?domain=" + Recipe.Group.Title + "&identifier=" + Convert.ToInt32(val.GetString()) + "&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
-                            var result = await response.Content.ReadAsStringAsync();
+                        IJsonValue val;
+                        if (!obj.TryGetValue(key, out val))
+                            continue;
 
-                            // Parse the JSON Recipe data
-                            var Recipes = JsonObject.Parse(result/*.Substring(12, result.Length - 13)*/);
-                            foreach (var item1 in Recipes)
-                            {
-                                if (item1.Key == "detail")
+                        switch (key)
+                        {
+                            case "identifier":
+                                Recipe.UniqueId = val.GetString();
+                                var client = new HttpClient();
+                                client.MaxResponseContentBufferSize = 1024 * 1024; // Read up to 1 MB of data
+                                var response = await client.GetAsync(new Uri("http://me2day.net/api/get_content.json?domain=" + Recipe.Group.Title + "&identifier=" + Convert.ToInt32(val.GetString()) + "&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
+                                var result = await response.Content.ReadAsStringAsync();
+
+                                // Parse the JSON Recipe data
+                                var Recipes = JsonObject.Parse(result/*.Substring(12, result.Length - 13)*/);
+                                foreach (var item1 in Recipes)
                                 {
-
-                                    //var obj1 = item1.GetObject();
-                                    var obj1 = item1.Value.GetObject();
-                                    foreach (var key1 in obj1)
+                                    if (item1.Key == "detail")
                                     {
 
-                                        IJsonValue val1;
-                                        /*
-                                           if (!obj1.TryGetValue(key1, out val1))
-                                                   continue;
-                                        */
-                                        val1 = key1.Value;
-                                        switch (key1.Key)
+                                        //var obj1 = item1.GetObject();
+                                        var obj1 = item1.Value.GetObject();
+                                        foreach (var key1 in obj1)
                                         {
-                                            case "title":
-                                                Recipe.Title = val1.GetString();
-                                                break;
-                                            case "artist":
-                                                Recipe.ShortTitle = val1.GetString();
-                                                break;
-                                            case "cast":
-                                                Recipe.ShortTitle = val1.GetString();
-                                                break;
-                                            case "author":
-                                                Recipe.ShortTitle = val1.GetString();
-                                                break;
-                                          //  case "rate":
-                                           //     Recipe.PrepTime = Convert.ToInt32(val1.GetString());
-                                            //    break;
-                                            case "description":
-                                                Recipe.Directions = val1.GetString();
-                                                break;
-                                            
-                                            case "image_url":
-                                                Recipe.SetImage(val1.GetString());
-                                                break;
+
+                                            IJsonValue val1;
+                                            /*
+                                               if (!obj1.TryGetValue(key1, out val1))
+                                                       continue;
+                                            */
+                                            val1 = key1.Value;
+                                            switch (key1.Key)
+                                            {
+                                                case "title":
+                                                    Recipe.Title = val1.GetString();
+                                                    break;
+                                                case "artist":
+                                                    Recipe.ShortTitle = val1.GetString();
+                                                    break;
+                                                case "cast":
+                                                    Recipe.ShortTitle = val1.GetString();
+                                                    break;
+                                                case "author":
+                                                    Recipe.ShortTitle = val1.GetString();
+                                                    break;
+                                                //  case "rate":
+                                                //     Recipe.PrepTime = Convert.ToInt32(val1.GetString());
+                                                //    break;
+                                                case "description":
+                                                    Recipe.Directions = val1.GetString();
+                                                    Recipe.Directions = Recipe.Directions.Replace("&amp;", "&");
+
+                                                    Recipe.Directions = Recipe.Directions.Replace("&gt;", ">");
+                                                    Recipe.Directions = Recipe.Directions.Replace("&lt;", "<");
+
+                                                    break;
+
+                                                case "image_url":
+                                                    Recipe.SetImage(val1.GetString());
+                                                    break;
+                                            }
                                         }
                                     }
                                 }
-                            }
-                            break;
-                        case "domain":
-                            string groupKey = val.GetString();
+                                break;
+                            case "domain":
+                                string groupKey = val.GetString();
 
 
-                            group = _recipeDataSource.AllGroups.FirstOrDefault(c => c.Title.Equals(groupKey));
+                                group = _recipeDataSource.AllGroups.FirstOrDefault(c => c.Title.Equals(groupKey));
 
-                            if (group == null)
-                                group = CreateRecipeGroup(groupKey);
+                                if (group == null)
+                                    group = CreateRecipeGroup(groupKey);
 
-                            Recipe.Group = group;
-                            break;
+                                Recipe.Group = group;
+                                break;
+                        }
                     }
-                }
 
-                if (group != null)
-                {
-                    var client = new HttpClient();
-                    client.MaxResponseContentBufferSize = 1024 * 1024; // Read up to 1 MB of data
-                    var response = await client.GetAsync(new Uri("http://me2day.net/api/get_posts_by_content.json?domain="+Recipe.Group.Title+"&identifier="+Recipe.UniqueId+"&from_me2live=true&page=1&count=10&akey=3345257cb3f6681909994ea2c0566e80&asig=MTMzOTE2NDY1MiQkYnlidWFtLnEkJDYzZTVlM2EwOWUyYmI5M2Q0OGU4ZjlmNzA4ZjUzYjMz&locale=ko-KR"));
-                    var result = await response.Content.ReadAsStringAsync();
-
-                    // Parse the JSON Recipe data
-                    var Rarray = JsonArray.Parse(result/*.Substring(12, result.Length - 13)*/);
-                    
-                    foreach (var Ritem in Rarray)
+                    if (group != null)
                     {
-                        var Robj = Ritem.GetObject();
-                        Recipe.Ingredients  +=Robj["author"].GetObject()["nickname"].GetString()+" : "+Robj["textBody"].GetString()+"\n\n"; 
+                        Recipe.Ingredients = "";
+                        group.Items.Add(Recipe);
+
                     }
-                    
-                    group.Items.Add(Recipe);
                 }
+                _recipeDataSource.AllGroups.FirstOrDefault(c => c.Title.Equals("movie")).Title = "영화";
+                _recipeDataSource.AllGroups.FirstOrDefault(c => c.Title.Equals("music_album")).Title = "음반";
+                _recipeDataSource.AllGroups.FirstOrDefault(c => c.Title.Equals("book")).Title = "책";
             }
-            _recipeDataSource.AllGroups.FirstOrDefault(c=>c.Title.Equals("movie")).Title="영화";
-            _recipeDataSource.AllGroups.FirstOrDefault(c=>c.Title.Equals("music_album")).Title="음반";
-            _recipeDataSource.AllGroups.FirstOrDefault(c=>c.Title.Equals("book")).Title="책";
+            catch (Exception ex)
+            {
+                _recipeDataSource = null;
+            }
         }
         
         private static RecipeDataGroup CreateRecipeGroup(string obj)

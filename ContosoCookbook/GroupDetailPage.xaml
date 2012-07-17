@@ -86,13 +86,8 @@
             ItemClick="ItemView_ItemClick">
 
 
-            <ListView.Header>
-                <StackPanel>
-                    <TextBlock Text="{Binding Title}" Margin="20,0,18,20" Style="{StaticResource TitleTextStyle}" MaxHeight="60"/>
-                </StackPanel>
-            </ListView.Header>
         </ListView>
-<!-- Vertical scrolling list used in portrait mode -->
+    <!-- Vertical scrolling list used in portrait mode -->
         <ScrollViewer
     x:Name="portraitScrollViewer"
     AutomationProperties.AutomationId="SnappedDetailsScrollViewer"

@@ -22,7 +22,6 @@ using ContosoCookbook.Data;
 using Windows.ApplicationModel.Search;
 
 using Windows.UI.ApplicationSettings;
-using ContosoCookbook.Common;
 
 
 namespace ContosoCookbook
@@ -87,7 +86,7 @@ namespace ContosoCookbook
             // Place the frame in the current Window and ensure that it is active
             Window.Current.Content = rootFrame;
             Window.Current.Activate();
-            SearchPane.GetForCurrentView().SuggestionsRequested += OnSuggestionsRequested;
+            //SearchPane.GetForCurrentView().SuggestionsRequested += OnSuggestionsRequested;
             SettingsPane.GetForCurrentView().CommandsRequested += OnCommandsRequested;
         }
         void OnSuggestionsRequested(SearchPane sender, SearchPaneSuggestionsRequestedEventArgs args)
