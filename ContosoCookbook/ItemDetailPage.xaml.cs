@@ -213,6 +213,7 @@ request.Data.SetBitmap(reference);
                 {
                     MessageDialog md = new MessageDialog("인터넷 연결을 확인해 주세요", "인터넷 연결 없음");
                     md.ShowAsync();
+                    retryButton.Visibility = Visibility.Visible;
                     // _recipeDataSource = new RecipeDataSource();
                 }
             }
@@ -224,6 +225,18 @@ request.Data.SetBitmap(reference);
         {
             if (e.Key == Windows.System.VirtualKey.Back)
                 this.Frame.GoBack();
+        }
+
+        private void retryButton_Click_1(object sender, RoutedEventArgs e)
+        {
+           // retryButton.Visibility = Visibility.Collapsed;
+           // FlipView_SelectionChanged(flipView1, null);
+        }
+
+        private void retryButton_Tapped_1(object sender, TappedRoutedEventArgs e)
+        {
+            retryButton.Visibility = Visibility.Collapsed;
+            FlipView_SelectionChanged(flipView1, null);
         }
     }
 }

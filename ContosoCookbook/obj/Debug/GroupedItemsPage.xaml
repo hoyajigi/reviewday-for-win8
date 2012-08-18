@@ -39,7 +39,7 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='5' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:ConnectionId='6' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Grid.Column="1" Style="{StaticResource PageHeaderTextStyle}"/>
         </Grid>
 
@@ -66,7 +66,7 @@
                             <GroupStyle.HeaderTemplate>
                                 <DataTemplate>
                                     <Grid Margin="1,0,0,6">
-                                        <Button x:ConnectionId='4'
+                                        <Button x:ConnectionId='5'
                                     AutomationProperties.Name="Group Title"
                                     Content="{Binding Title}"
                                                         
@@ -102,7 +102,7 @@
                     <GroupStyle.HeaderTemplate>
                         <DataTemplate>
                             <Grid Margin="7,7,0,0">
-                                <Button x:ConnectionId='3'
+                                <Button x:ConnectionId='4'
                                     AutomationProperties.Name="Group Title"
                                     Content="{Binding Title}"
                                                         
@@ -113,6 +113,7 @@
                 </GroupStyle>
             </ListView.GroupStyle>
         </ListView>
+        <Button x:ConnectionId='3' x:Name="retryButton"                             Content="재시도" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Visibility="Collapsed"/>
 
         <VisualStateManager.VisualStateGroups>
 

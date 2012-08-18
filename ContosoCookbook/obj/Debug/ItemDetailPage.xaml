@@ -1,4 +1,4 @@
-﻿<common:LayoutAwarePage
+﻿<common:LayoutAwarePage x:ConnectionId='1'
     x:Name="pageRoot"
     x:Class="ContosoCookbook.ItemDetailPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
@@ -10,7 +10,7 @@
     xmlns:common="using:ContosoCookbook.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"                             >
 
   <Page.Resources>
     <common:ListConverter x:Key="ListConverter" />
@@ -21,7 +21,7 @@
         d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
 
     <DataTemplate x:Key="FlipViewItemTemplate">
-      <UserControl x:ConnectionId='1'                                                         >
+      <UserControl x:ConnectionId='2'                                                         >
     <!--    <ScrollViewer x:Name="scrollViewer" Style="{StaticResource HorizontalScrollViewerStyle}" Grid.Row="1">-->
 
           <!-- Three-column grid for item-detail layout -->
@@ -88,7 +88,7 @@
         <ColumnDefinition Width="Auto"/>
         <ColumnDefinition Width="*"/>
       </Grid.ColumnDefinitions>
-      <Button x:ConnectionId='5' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+      <Button x:ConnectionId='7' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
       <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1"/>
     </Grid>
 
@@ -98,7 +98,7 @@
             group
         -->
     <Grid Grid.Row="1">
-    <FlipView x:ConnectionId='4'
+    <FlipView x:ConnectionId='6'
         x:Name="flipView1"
         AutomationProperties.AutomationId="ItemsFlipView"
         AutomationProperties.Name="Item Details"
@@ -106,10 +106,7 @@
         Margin="0,-3,0,0"
                                                     
         ItemTemplate="{StaticResource FlipViewItemTemplate}"
-        ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
-      
-    
-    </FlipView>
+        ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
    </Grid>
 <!-- FlipView used in portrait mode -->
         <FlipView
@@ -123,7 +120,7 @@
 
             <FlipView.ItemTemplate>
                 <DataTemplate>
-                    <UserControl x:ConnectionId='3'                                                         >
+                    <UserControl x:ConnectionId='5'                                                         >
                         <ScrollViewer x:Name="scrollViewer" Style="{StaticResource VerticalScrollViewerStyle}" Grid.Row="1">
 
                             <!-- Vertical StackPanel for item-detail layout -->
@@ -161,7 +158,7 @@
 
             <FlipView.ItemTemplate>
                 <DataTemplate>
-                    <UserControl x:ConnectionId='2'                                                         >
+                    <UserControl x:ConnectionId='4'                                                         >
                         <ScrollViewer x:Name="scrollViewer" Style="{StaticResource VerticalScrollViewerStyle}" Grid.Row="1">
 
                             <!-- Vertical StackPanel for item-detail layout -->
@@ -180,7 +177,9 @@
                 </DataTemplate>
             </FlipView.ItemTemplate>
         </FlipView>
-    <VisualStateManager.VisualStateGroups>
+        <Button x:ConnectionId='3' x:Name="retryButton"                                                           Content="재시도" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+
+        <VisualStateManager.VisualStateGroups>
       <!-- Visual states reflect the application's view state -->
       <VisualStateGroup x:Name="ApplicationViewStates">
         <VisualState x:Name="FullScreenLandscape"/>

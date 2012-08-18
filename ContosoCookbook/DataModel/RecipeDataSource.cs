@@ -204,8 +204,9 @@ namespace ContosoCookbook.Data
         public static IEnumerable<RecipeDataGroup> GetGroups(string uniqueId)
         {
             if (!uniqueId.Equals("AllGroups")) throw new ArgumentException("Only 'AllGroups' is supported as a collection of groups");
-
-            return _recipeDataSource.AllGroups;
+            if(_recipeDataSource!=null)
+                return _recipeDataSource.AllGroups;
+            return null;
         }
 
         public static RecipeDataGroup GetGroup(string uniqueId)

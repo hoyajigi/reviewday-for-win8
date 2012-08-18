@@ -113,6 +113,7 @@
                 </GroupStyle>
             </ListView.GroupStyle>
         </ListView>
+        <Button x:Name="retryButton" Click="retryButton_Click_1" Content="재시도" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Visibility="Collapsed"/>
 
         <VisualStateManager.VisualStateGroups>
 

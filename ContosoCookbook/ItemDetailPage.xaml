@@ -10,7 +10,7 @@
     xmlns:common="using:ContosoCookbook.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" KeyDown="pageRoot_KeyDown_1">
 
   <Page.Resources>
     <common:ListConverter x:Key="ListConverter" />
@@ -106,11 +106,10 @@
         Margin="0,-3,0,0"
         SelectionChanged="FlipView_SelectionChanged"
         ItemTemplate="{StaticResource FlipViewItemTemplate}"
-        ItemsSource="{Binding Source={StaticResource itemsViewSource}}">
-      
-    
-    </FlipView>
-   </Grid>
+        ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
+            <Button x:Name="retryButton" Tapped="retryButton_Tapped_1" Click="retryButton_Click_1" Content="재시도" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed" />
+
+        </Grid>
 <!-- FlipView used in portrait mode -->
         <FlipView
     x:Name="portraitFlipView"
@@ -180,7 +179,8 @@
                 </DataTemplate>
             </FlipView.ItemTemplate>
         </FlipView>
-    <VisualStateManager.VisualStateGroups>
+
+        <VisualStateManager.VisualStateGroups>
       <!-- Visual states reflect the application's view state -->
       <VisualStateGroup x:Name="ApplicationViewStates">
         <VisualState x:Name="FullScreenLandscape"/>

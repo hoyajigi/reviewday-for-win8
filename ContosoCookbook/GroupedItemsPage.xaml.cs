@@ -47,6 +47,7 @@ namespace ContosoCookbook
             {
                 MessageDialog md = new MessageDialog("인터넷 연결을 확인해 주세요", "인터넷 연결 없음");
                 md.ShowAsync();
+                retryButton.Visibility = Visibility.Visible;
             }
             else
             {
@@ -83,6 +84,25 @@ namespace ContosoCookbook
             // by passing required information as a navigation parameter
             var itemId = ((RecipeDataItem)e.ClickedItem).UniqueId; 
             this.Frame.Navigate(typeof(ItemDetailPage), itemId);
+        }
+
+        private async void retryButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            retryButton.Visibility = Visibility.Collapsed;
+            await RecipeDataSource.LoadRemoteDataAsync();
+            var recipeDataGroups = RecipeDataSource.GetGroups("AllGroups");
+            if (recipeDataGroups==null||recipeDataGroups.Count() == 0)
+            {
+                MessageDialog md = new MessageDialog("인터넷 연결을 확인해 주세요", "인터넷 연결 없음");
+                md.ShowAsync();
+                retryButton.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // _recipeDataSource = new RecipeDataSource();
+                this.DefaultViewModel["Groups"] = recipeDataGroups;
+                // this.groupGridView.ItemsSource = this.groupedItemsViewSource.View.CollectionGroups;
+            }
         }
     }
 }
