@@ -22,11 +22,11 @@
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ContosoCookbook.exe">
       <PackagePath>ContosoCookbook.exe</PackagePath>
-      <Modified>2012-08-17T18:47:27.396</Modified>
+      <Modified>2012-08-18T01:35:58.850</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\ContosoCookbook.pdb">
       <PackagePath>ContosoCookbook.pdb</PackagePath>
-      <Modified>2012-08-17T18:47:27.355</Modified>
+      <Modified>2012-08-18T01:35:58.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\Assets\Logo.png">
       <PackagePath>Assets\Logo.png</PackagePath>
@@ -74,7 +74,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\Common\StandardStyles.xaml">
       <PackagePath>Common\StandardStyles.xaml</PackagePath>
-      <Modified>2012-08-17T18:44:13.444</Modified>
+      <Modified>2012-08-18T01:35:55.680</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hoyaj_000\Documents\GitHub\reviewday-for-win8\ContosoCookbook\bin\Debug\GroupedItemsPage.xaml">
       <PackagePath>GroupedItemsPage.xaml</PackagePath>
