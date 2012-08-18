@@ -10,18 +10,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Markup;
-
 namespace ContosoCookbook
 {
-    partial class AboutUserControl : Windows.UI.Xaml.Controls.UserControl, IComponentConnector
+    partial class AboutUserControl : global::Windows.UI.Xaml.Controls.UserControl, global::Windows.UI.Xaml.Markup.IComponentConnector
     {
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
  
         public void Connect(int connectionId, object target)
         {
@@ -29,7 +23,7 @@ namespace ContosoCookbook
             {
             case 1:
                 #line 35 "..\..\AboutUserControl.xaml"
-                ((Windows.UI.Xaml.Controls.Primitives.ButtonBase)(target)).Click += this.OnBackButtonClicked;
+                ((global::Windows.UI.Xaml.Controls.Primitives.ButtonBase)(target)).Click += this.OnBackButtonClicked;
                  #line default
                  #line hidden
                 break;

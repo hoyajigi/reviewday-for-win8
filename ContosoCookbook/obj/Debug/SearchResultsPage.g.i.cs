@@ -10,95 +10,89 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Markup;
-
 namespace ContosoCookbook
 {
-    partial class SearchResultsPage : ContosoCookbook.Common.LayoutAwarePage
+    partial class SearchResultsPage : global::ContosoCookbook.Common.LayoutAwarePage
     {
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private ContosoCookbook.Common.LayoutAwarePage pageRoot; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Data.CollectionViewSource resultsViewSource; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Data.CollectionViewSource filtersViewSource; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.Grid resultsPanel; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.TextBlock noResultsTextBlock; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.Grid typicalPanel; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.Grid snappedPanel; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.ListView resultsListView; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.ItemsControl filtersItemsControl; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.GridView resultsGridView; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.Button backButton; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.TextBlock pageTitle; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.TextBlock resultText; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.Controls.TextBlock queryText; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualStateGroup ApplicationViewStates; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualStateGroup ResultStates; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualState ResultsFound; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualState NoResultsFound; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualState FullScreenLandscape; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualState Filled; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualState FullScreenPortrait; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        private Windows.UI.Xaml.VisualState Snapped; 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::ContosoCookbook.Common.LayoutAwarePage pageRoot; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Data.CollectionViewSource resultsViewSource; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Data.CollectionViewSource filtersViewSource; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.Grid resultsPanel; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.TextBlock noResultsTextBlock; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.Grid typicalPanel; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.Grid snappedPanel; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.ListView resultsListView; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.ItemsControl filtersItemsControl; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.GridView resultsGridView; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.Button backButton; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.TextBlock pageTitle; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.TextBlock resultText; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.Controls.TextBlock queryText; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualStateGroup ApplicationViewStates; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualStateGroup ResultStates; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualState ResultsFound; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualState NoResultsFound; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualState FullScreenLandscape; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualState Filled; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualState FullScreenPortrait; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        private global::Windows.UI.Xaml.VisualState Snapped; 
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
         private bool _contentLoaded;
 
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public void InitializeComponent()
         {
             if (_contentLoaded)
                 return;
 
             _contentLoaded = true;
-            Application.LoadComponent(this, new System.Uri("ms-appx:///SearchResultsPage.xaml"), Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation.Application);
+            global::Windows.UI.Xaml.Application.LoadComponent(this, new global::System.Uri("ms-appx:///SearchResultsPage.xaml"), global::Windows.UI.Xaml.Controls.Primitives.ComponentResourceLocation.Application);
  
-            pageRoot = (ContosoCookbook.Common.LayoutAwarePage)this.FindName("pageRoot");
-            resultsViewSource = (Windows.UI.Xaml.Data.CollectionViewSource)this.FindName("resultsViewSource");
-            filtersViewSource = (Windows.UI.Xaml.Data.CollectionViewSource)this.FindName("filtersViewSource");
-            resultsPanel = (Windows.UI.Xaml.Controls.Grid)this.FindName("resultsPanel");
-            noResultsTextBlock = (Windows.UI.Xaml.Controls.TextBlock)this.FindName("noResultsTextBlock");
-            typicalPanel = (Windows.UI.Xaml.Controls.Grid)this.FindName("typicalPanel");
-            snappedPanel = (Windows.UI.Xaml.Controls.Grid)this.FindName("snappedPanel");
-            resultsListView = (Windows.UI.Xaml.Controls.ListView)this.FindName("resultsListView");
-            filtersItemsControl = (Windows.UI.Xaml.Controls.ItemsControl)this.FindName("filtersItemsControl");
-            resultsGridView = (Windows.UI.Xaml.Controls.GridView)this.FindName("resultsGridView");
-            backButton = (Windows.UI.Xaml.Controls.Button)this.FindName("backButton");
-            pageTitle = (Windows.UI.Xaml.Controls.TextBlock)this.FindName("pageTitle");
-            resultText = (Windows.UI.Xaml.Controls.TextBlock)this.FindName("resultText");
-            queryText = (Windows.UI.Xaml.Controls.TextBlock)this.FindName("queryText");
-            ApplicationViewStates = (Windows.UI.Xaml.VisualStateGroup)this.FindName("ApplicationViewStates");
-            ResultStates = (Windows.UI.Xaml.VisualStateGroup)this.FindName("ResultStates");
-            ResultsFound = (Windows.UI.Xaml.VisualState)this.FindName("ResultsFound");
-            NoResultsFound = (Windows.UI.Xaml.VisualState)this.FindName("NoResultsFound");
-            FullScreenLandscape = (Windows.UI.Xaml.VisualState)this.FindName("FullScreenLandscape");
-            Filled = (Windows.UI.Xaml.VisualState)this.FindName("Filled");
-            FullScreenPortrait = (Windows.UI.Xaml.VisualState)this.FindName("FullScreenPortrait");
-            Snapped = (Windows.UI.Xaml.VisualState)this.FindName("Snapped");
+            pageRoot = (global::ContosoCookbook.Common.LayoutAwarePage)this.FindName("pageRoot");
+            resultsViewSource = (global::Windows.UI.Xaml.Data.CollectionViewSource)this.FindName("resultsViewSource");
+            filtersViewSource = (global::Windows.UI.Xaml.Data.CollectionViewSource)this.FindName("filtersViewSource");
+            resultsPanel = (global::Windows.UI.Xaml.Controls.Grid)this.FindName("resultsPanel");
+            noResultsTextBlock = (global::Windows.UI.Xaml.Controls.TextBlock)this.FindName("noResultsTextBlock");
+            typicalPanel = (global::Windows.UI.Xaml.Controls.Grid)this.FindName("typicalPanel");
+            snappedPanel = (global::Windows.UI.Xaml.Controls.Grid)this.FindName("snappedPanel");
+            resultsListView = (global::Windows.UI.Xaml.Controls.ListView)this.FindName("resultsListView");
+            filtersItemsControl = (global::Windows.UI.Xaml.Controls.ItemsControl)this.FindName("filtersItemsControl");
+            resultsGridView = (global::Windows.UI.Xaml.Controls.GridView)this.FindName("resultsGridView");
+            backButton = (global::Windows.UI.Xaml.Controls.Button)this.FindName("backButton");
+            pageTitle = (global::Windows.UI.Xaml.Controls.TextBlock)this.FindName("pageTitle");
+            resultText = (global::Windows.UI.Xaml.Controls.TextBlock)this.FindName("resultText");
+            queryText = (global::Windows.UI.Xaml.Controls.TextBlock)this.FindName("queryText");
+            ApplicationViewStates = (global::Windows.UI.Xaml.VisualStateGroup)this.FindName("ApplicationViewStates");
+            ResultStates = (global::Windows.UI.Xaml.VisualStateGroup)this.FindName("ResultStates");
+            ResultsFound = (global::Windows.UI.Xaml.VisualState)this.FindName("ResultsFound");
+            NoResultsFound = (global::Windows.UI.Xaml.VisualState)this.FindName("NoResultsFound");
+            FullScreenLandscape = (global::Windows.UI.Xaml.VisualState)this.FindName("FullScreenLandscape");
+            Filled = (global::Windows.UI.Xaml.VisualState)this.FindName("Filled");
+            FullScreenPortrait = (global::Windows.UI.Xaml.VisualState)this.FindName("FullScreenPortrait");
+            Snapped = (global::Windows.UI.Xaml.VisualState)this.FindName("Snapped");
         }
     }
 }

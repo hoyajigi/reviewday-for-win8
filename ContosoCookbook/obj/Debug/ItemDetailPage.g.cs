@@ -10,18 +10,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using Windows.Foundation;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Markup;
-
 namespace ContosoCookbook
 {
-    partial class ItemDetailPage : ContosoCookbook.Common.LayoutAwarePage, IComponentConnector
+    partial class ItemDetailPage : global::ContosoCookbook.Common.LayoutAwarePage, global::Windows.UI.Xaml.Markup.IComponentConnector
     {
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
-        [System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 4.0.0.0")]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
  
         public void Connect(int connectionId, object target)
         {
@@ -29,43 +23,43 @@ namespace ContosoCookbook
             {
             case 1:
                 #line 24 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.FrameworkElement)(target)).Loaded += this.StartLayoutUpdates;
+                ((global::Windows.UI.Xaml.FrameworkElement)(target)).Loaded += this.StartLayoutUpdates;
                  #line default
                  #line hidden
                 #line 24 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.FrameworkElement)(target)).Unloaded += this.StopLayoutUpdates;
+                ((global::Windows.UI.Xaml.FrameworkElement)(target)).Unloaded += this.StopLayoutUpdates;
                  #line default
                  #line hidden
                 break;
             case 2:
                 #line 164 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.FrameworkElement)(target)).Loaded += this.StartLayoutUpdates;
+                ((global::Windows.UI.Xaml.FrameworkElement)(target)).Loaded += this.StartLayoutUpdates;
                  #line default
                  #line hidden
                 #line 164 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.FrameworkElement)(target)).Unloaded += this.StopLayoutUpdates;
+                ((global::Windows.UI.Xaml.FrameworkElement)(target)).Unloaded += this.StopLayoutUpdates;
                  #line default
                  #line hidden
                 break;
             case 3:
                 #line 126 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.FrameworkElement)(target)).Loaded += this.StartLayoutUpdates;
+                ((global::Windows.UI.Xaml.FrameworkElement)(target)).Loaded += this.StartLayoutUpdates;
                  #line default
                  #line hidden
                 #line 126 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.FrameworkElement)(target)).Unloaded += this.StopLayoutUpdates;
+                ((global::Windows.UI.Xaml.FrameworkElement)(target)).Unloaded += this.StopLayoutUpdates;
                  #line default
                  #line hidden
                 break;
             case 4:
                 #line 107 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.Controls.Primitives.Selector)(target)).SelectionChanged += this.FlipView_SelectionChanged;
+                ((global::Windows.UI.Xaml.Controls.Primitives.Selector)(target)).SelectionChanged += this.FlipView_SelectionChanged;
                  #line default
                  #line hidden
                 break;
             case 5:
                 #line 91 "..\..\ItemDetailPage.xaml"
-                ((Windows.UI.Xaml.Controls.Primitives.ButtonBase)(target)).Click += this.GoBack;
+                ((global::Windows.UI.Xaml.Controls.Primitives.ButtonBase)(target)).Click += this.GoBack;
                  #line default
                  #line hidden
                 break;
