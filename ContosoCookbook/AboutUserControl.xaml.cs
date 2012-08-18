@@ -32,5 +32,10 @@ namespace ContosoCookbook
             SettingsPane.Show();
         }
 
+        private async void TextBlock_Tapped_1(object sender, TappedRoutedEventArgs e)
+        {
+            await Windows.System.Launcher.LaunchUriAsync(new Uri("http://www.naver.com/rules/privacy.html"));
+        }
+
     }
 }

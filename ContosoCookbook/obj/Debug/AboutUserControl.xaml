@@ -32,7 +32,7 @@ mc:Ignorable="d"
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
 
-                    <Button x:ConnectionId='1'                             Margin="0,3,0,0" Grid.Column="0" Style="{StaticResource SettingsBackButtonStyle}" HorizontalAlignment="Left" />
+                    <Button x:ConnectionId='2'                             Margin="0,3,0,0" Grid.Column="0" Style="{StaticResource SettingsBackButtonStyle}" HorizontalAlignment="Left" />
                     <TextBlock Foreground="Black" Margin="10,0,0,0" Grid.Column="1" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.6667" Text="About" HorizontalAlignment="Left" />
                 </Grid>
 
@@ -47,7 +47,7 @@ mc:Ignorable="d"
                 </Grid.Transitions>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="ReviewDay" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.667" />
-                    <TextBlock Text="Special Thanks to Chanju Jeon" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" />
+                    <TextBlock x:ConnectionId='1' Text="Privacy Policy" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18"                            />
                 </StackPanel>
             </Grid>
 

@@ -47,7 +47,7 @@ mc:Ignorable="d"
                 </Grid.Transitions>
                 <StackPanel Orientation="Vertical">
                     <TextBlock Text="ReviewDay" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="26.667" />
-                    <TextBlock Text="Special Thanks to Chanju Jeon" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" />
+                    <TextBlock Text="Privacy Policy" Foreground="Black" FontFamily="Segoe UI" FontWeight="SemiLight" FontSize="18" Tapped="TextBlock_Tapped_1"/>
                 </StackPanel>
             </Grid>
 
