@@ -219,5 +219,11 @@ request.Data.SetBitmap(reference);
             this._item = item;
 
         }
+
+        private void pageRoot_KeyDown_1(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Back)
+                this.Frame.GoBack();
+        }
     }
 }

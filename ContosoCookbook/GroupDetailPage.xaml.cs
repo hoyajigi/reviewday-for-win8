@@ -58,5 +58,11 @@ namespace ContosoCookbook
             // by passing required information as a navigation parameter
             var itemId = ((RecipeDataItem)e.ClickedItem).UniqueId; this.Frame.Navigate(typeof(ItemDetailPage), itemId);
         }
+
+        private void pageRoot_KeyDown_1(object sender, KeyRoutedEventArgs e)
+        {
+            if (e.Key == Windows.System.VirtualKey.Back)
+                this.Frame.GoBack();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<common:LayoutAwarePage
+﻿<common:LayoutAwarePage x:ConnectionId='1'
     x:Name="pageRoot"
     x:Class="ContosoCookbook.GroupDetailPage"
     DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
@@ -10,7 +10,7 @@
     xmlns:common="using:ContosoCookbook.Common"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d"                             >
 
 <Page.Resources>
 
@@ -43,12 +43,12 @@
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:ConnectionId='4' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
+            <Button x:ConnectionId='5' x:Name="backButton"                IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Grid.Column="1"/>
         </Grid>
 
         <!-- Horizontal scrolling grid used in most view states -->
-        <GridView x:ConnectionId='1'
+        <GridView x:ConnectionId='2'
             x:Name="itemGridView"
             AutomationProperties.AutomationId="ItemGridView"
             AutomationProperties.Name="Items In Group"
@@ -71,7 +71,7 @@
         </GridView>
 
         <!-- Vertical scrolling list only used when snapped -->
-        <ListView x:ConnectionId='2'
+        <ListView x:ConnectionId='3'
             x:Name="itemListView"
             AutomationProperties.AutomationId="ItemListView"
             AutomationProperties.Name="Items In Group"
@@ -96,7 +96,7 @@
     Style="{StaticResource VerticalScrollViewerStyle}">
 
             <StackPanel Margin="90,0,90,0">
-                <ListView x:ConnectionId='3'
+                <ListView x:ConnectionId='4'
             AutomationProperties.AutomationId="ItemListView"
             AutomationProperties.Name="Items In Group"
             Margin="10,0,0,60"
